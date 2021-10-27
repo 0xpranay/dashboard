@@ -2,8 +2,31 @@
 
 $primary-color:black;
 $secondary-color: rgb(233, 109, 130);
+$nav-grad: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 
+@mixin gradient-bg {
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 7%, rgba(175,89,156,1) 19%, rgba(0,0,0,1) 63%);
+}
 // Template code
+html, body
+{
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+}
+html
+{
+    height: 100%;
+    width: 100%;
+}
+body
+{
+    // min-height: 100%;
+    // min-width: 100%;
+}
+
+
 *
 {
     padding: 0;
@@ -11,10 +34,16 @@ $secondary-color: rgb(233, 109, 130);
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     color: white;
+    text-rendering: geometricPrecision;
+    max-width: 100%;
 }
 
 a, a:visited, a:hover, a:active {
     color: inherit;
+}
+a:hover
+{
+    color: $secondary-color;
 }
 
 ul
@@ -35,12 +64,14 @@ ul
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .col-flex
 {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .smallText
 {
@@ -54,34 +85,37 @@ ul
 }
 .bigText
 {
-    font-size: 6rem;
+    font-size: clamp(4.5rem, 8vw, 6rem) !important;
     font-weight: 700;
     letter-spacing: -0.13rem;
     line-height: 100%;
 }
+
 // Website Code
 
 #lander
 {
-    height: 100vh;
+    width: 100%;
+    background: black;
 }
 #nav-bar
 {
+    white-space: nowrap;
+    position: relative;
     background-color: $primary-color;
     color: white;
     font-weight: 400;
     padding: 0.5rem 0rem;
     justify-content: space-between;
-    box-shadow: 0px 1rem 4rem $primary-color;
-    border-bottom: 2rem transparent $primary-color;
-
+    flex-wrap: nowrap;
+    z-index: 2;
+    box-shadow: 0px 5.6rem 5.6rem 1.875rem $primary-color;
 }
 
 #nav-bar a, #nav-bar ul
 {
     padding: 20px;
     text-decoration: none;
-    
 }
 
 #sub-menu
@@ -95,24 +129,75 @@ ul
 #container
 {
     justify-content: space-between;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(236,85,145,0.8253676470588236) 21%, rgba(0,0,0,1) 63%);
     height: 100%;
+    width: 100%;
+    background-color: black;
 }
 
 #container #welcome
 {
-    max-width: 50%;
+    max-width: 100%;
     position: relative;
-    top: 5rem;
-    left: 5rem;
+    top: 4rem;
     text-align: left;
+    z-index: 5;
+    // margin: auto;
+    padding: 20px;
+    flex: 1 1 50%;
 }
 
 #container #donut
 {
-    width: auto;
-    position: relative;
-    top: 5rem;
-    right: 5rem;
+    @include gradient-bg();
+    flex: 1 1 50%;
 }
+
+#donut img
+{
+    max-height: 100%;
+    display: block;
+    margin: auto;
+    width: 100%;
+    // margin-top: 2rem; Check once! This might raise an error
+
+    animation: spin 20s infinite linear;
+}
+
+@keyframes spin {
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #container
+    {
+
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+    #container #welcome
+    {
+        text-align: center;
+        margin-top: -2rem;
+        padding: 0px;
+        letter-spacing: -0.25rem;
+    }
+
+    #sub-menu, #buttonHolder
+    {
+        display: none;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
