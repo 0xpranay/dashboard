@@ -83,6 +83,7 @@ ul
 {
     font-size: 1rem;
     font-weight: 400;
+    color: $primary-color;
 }
 .mediumText
 {
@@ -90,6 +91,12 @@ ul
     font-weight: 400;
     line-height: 2.6rem !important;
     letter-spacing: -0.1rem;
+}
+.largeText
+{
+    font-size: 3.5rem;
+    line-height: 95%;
+    font-weight: 700;
 }
 .bigText
 {
@@ -139,6 +146,16 @@ ul
     color: black;
 }
 
+#tertiary-btn
+{
+    background-color: #a4f0f7;
+    color: black;
+}
+#tertiary-btn:hover
+{
+    background-color: white;
+    color: black;
+}
 .primary-box
 {
     background-color: #ff52b8;
@@ -197,7 +214,7 @@ ul
         // margin: auto;
         // padding: 1.25rem;
         flex: 1 1 50%;
-        padding: 6rem;
+        padding: 4rem;
     }
 
     #donut
@@ -232,8 +249,11 @@ ul
         flex: 1 1 40%;
         transition: all .2s linear;
     }
-
-    #primary-btn:hover, #secondary-btn:hover
+    #tertiary-btn
+    {
+        transition: all .2s linear;
+    }
+    #primary-btn:hover, #secondary-btn:hover, #tertiary-btn:hover
     {
         transform: translateY(-0.5rem);
         box-shadow: 0px 0.5rem 1rem rgba($color: white, $alpha: 0.4);
@@ -258,7 +278,14 @@ ul
     width: 100%;
     background-color: rgba($color: grey, $alpha: 0.4);
     margin-top: 1rem;
-    
+}
+
+#stat-divider
+{
+    display: none;
+    height: 1px;
+    width: 100%;
+    background-color: rgba($color: black, $alpha: 1);
 }
 
 @keyframes spin {
@@ -276,6 +303,8 @@ ul
 #number
 {
     font-size: 2.6rem;
+    font-weight: bold;
+    color: $primary-color;
 }
 
 #stat
@@ -284,8 +313,44 @@ ul
     word-wrap: break-word;
     width: 40%;
 }
+
+#intro
+{
+    padding: 2rem;
+    max-width: 100%;
+
+    #intro-text
+    {
+        flex:1 1 50%;
+    }
+    &-explain-explore
+    {
+        flex:1 1 50%;
+        justify-content: space-between;
+
+        #explain-text
+        {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+#tertiary-btn
+{
+    transition: all .2s linear;
+}
+#tertiary-btn:hover
+{
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 0.5rem 1rem rgba($color: white, $alpha: 0.4);
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    #lander
+    {
+        margin-bottom: 2rem;
+    }
     #container
     {
         display: flex;
@@ -345,13 +410,47 @@ ul
     {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
-
+        gap: 0px;
     }
 
     #stat-grid .row-flex
     {
         flex-direction: column;
+        justify-content:space-between;
         align-items: flex-start;
+    }
+
+    #stat-grid #divider
+    {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: rgba($color: grey, $alpha: 0.4);
+        margin-top: 1rem;
+    }
+
+    #stat-divider
+    {
+        display: block;
+        transform: translateY(1rem);
+    }
+
+    #intro
+    {
+        flex-direction: column;
+
+        &-text
+        {
+            font-size: 3rem;
+            text-align:center;
+            margin-bottom: 0.5rem;
+        }
+
+        #explain-text
+        {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
