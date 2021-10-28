@@ -145,7 +145,7 @@ ul {
 
 #secondary-btn {
   background-color: black;
-  border: 1px solid white; }
+  border: 1px solid white !important; }
 
 #secondary-btn:hover {
   background-color: white;
