@@ -20,13 +20,6 @@ html
     height: 100%;
     width: 100%;
 }
-body
-{
-    // min-height: 100%;
-    // min-width: 100%;
-}
-
-
 *
 {
     padding: 0;
@@ -80,8 +73,10 @@ ul
 }
 .mediumText
 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
+    line-height: 2.6rem !important;
+    letter-spacing: -0.1rem;
 }
 .bigText
 {
@@ -91,6 +86,45 @@ ul
     line-height: 100%;
 }
 
+.medium-btn
+{
+    // padding: 0.625rem 1.3125rem;
+    line-height: 1.6;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    text-align:center;
+    padding: 0.625rem 1rem;
+}
+
+.medium-btn:hover
+{
+    background-color: white;
+    color: white;
+}
+
+#primary-btn
+{
+    background-color: #eeaeda;
+    color: black;
+}
+
+#primary-btn:hover
+{
+    background-color: white;
+    color: black;
+}
+
+#secondary-btn
+{
+    background-color: $primary-color;
+    border: 1px solid white;
+}
+
+#secondary-btn:hover
+{
+    background-color: white;
+    color: black;
+}
 // Website Code
 
 #lander
@@ -109,7 +143,7 @@ ul
     justify-content: space-between;
     flex-wrap: nowrap;
     z-index: 2;
-    box-shadow: 0px 5.6rem 5.6rem 1.875rem $primary-color;
+    box-shadow: 0px 1rem 8rem 7rem $primary-color;
 }
 
 #nav-bar a, #nav-bar ul
@@ -132,24 +166,58 @@ ul
     height: 100%;
     width: 100%;
     background-color: black;
+    padding: 2rem;
+    margin-top: -3rem;
+    #welcome
+    {
+        max-width: 100%;
+        position: relative;
+        text-align: left;
+        z-index: 5;
+        // margin: auto;
+        // padding: 1.25rem;
+        flex: 1 1 50%;
+        padding: 6rem;
+    }
+
+    #donut
+    {
+        // @include gradient-bg();
+        flex: 1 1 50%;
+        padding: 4rem;
+    }
+
+    #card
+    {
+        padding: 1rem;
+        text-align: center;
+    }
 }
 
-#container #welcome
+#lander-links
 {
-    max-width: 100%;
-    position: relative;
-    top: 4rem;
-    text-align: left;
-    z-index: 5;
-    // margin: auto;
-    padding: 20px;
-    flex: 1 1 50%;
-}
+    margin-top: 1rem;
+    letter-spacing: -0.05rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #primary-btn
+    {
+        flex: 1 1 40%;
+        margin-right: 1rem;
+        transition: all .2s linear;
+    }
+    #secondary-btn
+    {
+        flex: 1 1 40%;
+        transition: all .2s linear;
+    }
 
-#container #donut
-{
-    @include gradient-bg();
-    flex: 1 1 50%;
+    #primary-btn:hover, #secondary-btn:hover
+    {
+        transform: translateY(-0.5rem);
+        box-shadow: 0px 0.5rem 1rem rgba($color: white, $alpha: 0.4);
+    }
 }
 
 #donut img
@@ -160,7 +228,17 @@ ul
     width: 100%;
     // margin-top: 2rem; Check once! This might raise an error
 
-    animation: spin 20s infinite linear;
+    animation: spin 60s infinite linear;
+}
+
+#divider
+{
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: rgba($color: grey, $alpha: 0.4);
+    margin-top: 1rem;
+    
 }
 
 @keyframes spin {
@@ -175,22 +253,57 @@ ul
 @media only screen and (max-width: 600px) {
     #container
     {
-
         display: flex;
         flex-direction: column-reverse;
         justify-content: start;
+        padding: 0;
+        margin: initial;
+    }
+
+    #container #donut
+    {
+        // @include gradient-bg();
+        width: 100%;
+        flex: 1 1 50%;
+        margin: auto;
+        margin-top: -2rem;
     }
     #container #welcome
     {
+        // top: 3rem;
+        line-height: 120%;
         text-align: center;
         margin-top: -2rem;
         padding: 0px;
-        letter-spacing: -0.25rem;
+        letter-spacing: -0.05em;
     }
 
     #sub-menu, #buttonHolder
     {
         display: none;
+    }
+
+    #lander-links
+    {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        #primary-btn
+        {
+            margin: 0;
+            margin-bottom: 1.1rem;
+        }
+
+        *
+        {
+            padding: 0.8rem 3rem;
+        }
+    }
+
+    #divider
+    {
+        width: 80%;
+        margin-left: 2rem;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
