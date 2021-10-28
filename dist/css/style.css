@@ -47,14 +47,43 @@ ul {
   font-weight: 400; }
 
 .mediumText {
-  font-size: 2rem;
-  font-weight: 400; }
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.6rem !important;
+  letter-spacing: -0.1rem; }
 
 .bigText {
   font-size: clamp(4.5rem, 8vw, 6rem) !important;
   font-weight: 700;
   letter-spacing: -0.13rem;
   line-height: 100%; }
+
+.medium-btn {
+  line-height: 1.6;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.625rem 1rem; }
+
+.medium-btn:hover {
+  background-color: white;
+  color: white; }
+
+#primary-btn {
+  background-color: #eeaeda;
+  color: black; }
+
+#primary-btn:hover {
+  background-color: white;
+  color: black; }
+
+#secondary-btn {
+  background-color: black;
+  border: 1px solid white; }
+
+#secondary-btn:hover {
+  background-color: white;
+  color: black; }
 
 #lander {
   width: 100%;
@@ -70,7 +99,7 @@ ul {
   justify-content: space-between;
   flex-wrap: nowrap;
   z-index: 2;
-  box-shadow: 0px 5.6rem 5.6rem 1.875rem black; }
+  box-shadow: 0px 1rem 8rem 7rem black; }
 
 #nav-bar a, #nav-bar ul {
   padding: 20px;
@@ -86,28 +115,53 @@ ul {
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  background-color: black; }
+  background-color: black;
+  padding: 2rem;
+  margin-top: -3rem; }
+  #container #welcome {
+    max-width: 100%;
+    position: relative;
+    text-align: left;
+    z-index: 5;
+    flex: 1 1 50%;
+    padding: 6rem; }
+  #container #donut {
+    flex: 1 1 50%;
+    padding: 4rem; }
+  #container #card {
+    padding: 1rem;
+    text-align: center; }
 
-#container #welcome {
-  max-width: 100%;
-  position: relative;
-  top: 4rem;
-  text-align: left;
-  z-index: 5;
-  padding: 20px;
-  flex: 1 1 50%; }
-
-#container #donut {
-  background: black;
-  background: radial-gradient(circle, black 7%, #af599c 19%, black 63%);
-  flex: 1 1 50%; }
+#lander-links {
+  margin-top: 1rem;
+  letter-spacing: -0.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #lander-links #primary-btn {
+    flex: 1 1 40%;
+    margin-right: 1rem;
+    transition: all .2s linear; }
+  #lander-links #secondary-btn {
+    flex: 1 1 40%;
+    transition: all .2s linear; }
+  #lander-links #primary-btn:hover, #lander-links #secondary-btn:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0px 0.5rem 1rem rgba(255, 255, 255, 0.4); }
 
 #donut img {
   max-height: 100%;
   display: block;
   margin: auto;
   width: 100%;
-  animation: spin 20s infinite linear; }
+  animation: spin 60s infinite linear; }
+
+#divider {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.4);
+  margin-top: 1rem; }
 
 @keyframes spin {
   100% {
@@ -118,14 +172,34 @@ ul {
   #container {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: start; }
+    justify-content: start;
+    padding: 0;
+    margin: initial; }
+  #container #donut {
+    width: 100%;
+    flex: 1 1 50%;
+    margin: auto;
+    margin-top: -2rem; }
   #container #welcome {
+    line-height: 120%;
     text-align: center;
     margin-top: -2rem;
     padding: 0px;
-    letter-spacing: -0.25rem; }
+    letter-spacing: -0.05em; }
   #sub-menu, #buttonHolder {
-    display: none; } }
+    display: none; }
+  #lander-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem; }
+    #lander-links #primary-btn {
+      margin: 0;
+      margin-bottom: 1.1rem; }
+    #lander-links * {
+      padding: 0.8rem 3rem; }
+  #divider {
+    width: 80%;
+    margin-left: 2rem; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /* Medium devices (landscape tablets, 768px and up) */
