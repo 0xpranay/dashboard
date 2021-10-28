@@ -37,6 +37,15 @@ ul {
   flex-direction: row;
   align-items: center; }
 
+.space-between {
+  justify-content: space-between; }
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 100%);
+  gap: 0.1rem 0.1rem; }
+
 .col-flex {
   display: flex;
   flex-direction: column;
@@ -70,7 +79,7 @@ ul {
   color: white; }
 
 #primary-btn {
-  background-color: #eeaeda;
+  background-color: #ff52b8;
   color: black; }
 
 #primary-btn:hover {
@@ -84,6 +93,11 @@ ul {
 #secondary-btn:hover {
   background-color: white;
   color: black; }
+
+.primary-box {
+  background-color: #ff52b8;
+  padding: 1rem;
+  text-align: center; }
 
 #lander {
   width: 100%;
@@ -167,6 +181,17 @@ ul {
   100% {
     transform: rotate(360deg); } }
 
+#stat-grid {
+  width: 100%; }
+
+#number {
+  font-size: 2.6rem; }
+
+#stat {
+  text-align: left;
+  word-wrap: break-word;
+  width: 40%; }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   #container {
@@ -199,7 +224,13 @@ ul {
       padding: 0.8rem 3rem; }
   #divider {
     width: 80%;
-    margin-left: 2rem; } }
+    margin-left: 2rem; }
+  .responsive-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr); }
+  #stat-grid .row-flex {
+    flex-direction: column;
+    align-items: flex-start; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /* Medium devices (landscape tablets, 768px and up) */
