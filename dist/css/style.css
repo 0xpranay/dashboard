@@ -46,6 +46,57 @@ ul {
   grid-template-rows: repeat(1, 100%);
   gap: 0.1rem 0.1rem; }
 
+.showcase-flex {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: min-content;
+  animation: postmove-right 20s linear infinite; }
+
+.showcase-flex-1 {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: min-content;
+  animation: postmove-left 20s linear infinite; }
+
+.showcase-flex:hover {
+  animation-play-state: paused; }
+
+.showcase-flex-1:hover {
+  animation-play-state: paused; }
+
+.post {
+  color: black;
+  border-radius: 5px 20px 5px 20px;
+  white-space: nowrap;
+  background-color: #ff52b8;
+  padding: 1.25rem;
+  margin: 0.625rem;
+  width: 33%; }
+
+.post-1 {
+  color: black;
+  border-radius: 20px 5px 20px 5px;
+  white-space: nowrap;
+  background-color: #ff52b8;
+  padding: 1.25rem;
+  margin: 0.625rem;
+  width: 33%; }
+
+#post-1 {
+  background-color: #e96d82; }
+
+#post-2 {
+  background-color: #a4f0f7; }
+
+#post-3 {
+  background-color: #d7c16a; }
+
 .col-flex {
   display: flex;
   flex-direction: column;
@@ -59,7 +110,7 @@ ul {
 .mediumText {
   font-size: 1.5rem;
   font-weight: 400;
-  line-height: 2.6rem !important;
+  line-height: 2.5rem !important;
   letter-spacing: -0.1rem; }
 
 .largeText {
@@ -112,6 +163,33 @@ ul {
   background-color: #ff52b8;
   padding: 1rem;
   text-align: center; }
+
+#special-text-1 {
+  color: #ff52b8;
+  display: inline; }
+
+.special-text-1 {
+  color: black;
+  display: inline;
+  font-weight: bold; }
+
+#special-text-2 {
+  color: #a4f0f7;
+  display: inline; }
+
+.special-text-2 {
+  color: #a4f0f7;
+  display: inline;
+  font-weight: bold; }
+
+#special-text-3 {
+  color: #d7c16a;
+  display: inline; }
+
+.special-text-3 {
+  color: #d7c16a;
+  display: inline;
+  font-weight: bold; }
 
 #lander {
   width: 100%;
@@ -193,8 +271,8 @@ ul {
   background-color: rgba(128, 128, 128, 0.4);
   margin-top: 1rem; }
 
-#stat-divider {
-  display: none;
+.stat-divider {
+  display: none !important;
   height: 1px;
   width: 100%;
   background-color: black; }
@@ -218,7 +296,8 @@ ul {
 
 #intro {
   padding: 2rem;
-  max-width: 100%; }
+  max-width: 100%;
+  margin-bottom: 2rem; }
   #intro #intro-text {
     flex: 1 1 50%; }
   #intro-explain-explore {
@@ -234,6 +313,41 @@ ul {
   transform: translateY(-0.5rem);
   box-shadow: 0px 0.5rem 1rem rgba(255, 255, 255, 0.4); }
 
+#showcase {
+  overflow: hidden; }
+  #showcase-text {
+    padding: 2rem;
+    margin: auto; }
+
+@keyframes postmove-right {
+  100% {
+    transform: translateX(-33.3%); } }
+
+@keyframes postmove-left {
+  100% {
+    transform: translateX(33.3%); } }
+
+/* Large iPads */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0; }
+  .stat-divider-tablet-1 {
+    height: 2px;
+    width: 30rem;
+    position: absolute;
+    display: block !important;
+    transform: translateY(2.5rem); }
+  .stat-divider-tablet-2 {
+    height: 2px;
+    width: 30rem;
+    position: absolute;
+    display: block !important;
+    transform: translateY(2.5rem); } }
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   #lander {
@@ -283,20 +397,17 @@ ul {
     width: 100%;
     background-color: rgba(128, 128, 128, 0.4);
     margin-top: 1rem; }
-  #stat-divider {
-    display: block;
+  .stat-divider {
+    display: block !important;
     transform: translateY(1rem); }
   #intro {
-    flex-direction: column; }
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 50%; }
     #intro-text {
       font-size: 3rem;
       text-align: center;
-      margin-bottom: 0.5rem; }
+      margin-bottom: 1rem; }
     #intro #explain-text {
       text-align: center;
-      margin-bottom: 0.5rem; } }
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+      margin-bottom: 1rem; } }
