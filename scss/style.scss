@@ -171,7 +171,7 @@ ul
     font-size: clamp(4.5rem, 8vw, 6rem) !important;
     font-weight: 700;
     letter-spacing: -0.13rem;
-    line-height: 100%;
+    line-height: 95%;
 }
 
 .medium-btn
@@ -305,6 +305,9 @@ ul
     height: 100%;
     width: 100%;
     background-color: black;
+    background-image: linear-gradient(to left bottom, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
+    // background-image: linear-gradient(to left top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
+    // background-image: linear-gradient(to right top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
     padding: 2rem; //ALERT
     margin-top: -3rem;
     #welcome
@@ -472,6 +475,33 @@ ul
     }
 }
 
+#big-card-showcase
+{
+    margin: 5rem;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -0.03125rem !important;
+    text-align: left;
+}
+#big-card-showcase picture
+{
+    height: 30rem;
+    
+    img, source
+    {
+        width: auto;
+        height: 30rem;
+    }
+}
+#big-card
+{
+    padding: 2rem;
+    // background-color: #232325;
+    background-image: linear-gradient(to right top, #e96d82, #be5f82, #915379, #664766, #43394d, #363240, #2c2b33, #232325, #232325, #232325, #232325, #232325);
+    border-radius: 1.25rem;
+
+    flex: 1 1 50%;
+}
 /* Large iPads */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .responsive-grid
@@ -497,6 +527,17 @@ ul
         position: absolute;
         display: block !important;
         transform: translateY(2.5rem);
+    }
+
+    #big-card-showcase
+    {
+        margin: 0rem;
+        margin-top: 2rem;
+    }
+
+    #big-card
+    {
+        width: 50%;
     }
 }
 
@@ -580,7 +621,6 @@ ul
         justify-content:space-between;
         align-items: flex-start;
     }
-
     #stat-grid #divider
     {
         display: block;
@@ -627,5 +667,42 @@ ul
     //         display: none !important;
     //     }
     // }
+
+    #big-card-showcase
+    {
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        display: block;
+        picture
+        {
+            height: initial;
+
+            img, source
+            {
+                width: initial;
+                height: initial;
+            }
+        }
+
+        margin: 0;
+        padding: 1rem;
+        // margin: 1rem;
+
+        
+    }
+
+    #big-card:first-child
+    {
+        margin-right: 0px !important;
+        margin-bottom: 1rem;
+    }
+
+    #big-card
+    {
+        // margin: 0;
+        // padding: 1rem;
+        // width: auto;
+    }
 }
 
