@@ -357,7 +357,21 @@ ul {
   position: relative; }
   #banner #ethereum-text {
     position: absolute;
-    top: 0px; }
+    top: 4rem;
+    left: 1rem; }
+  #banner #xdai-text {
+    text-align: right;
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem; }
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 100px 60px black;
+  top: 0;
+  left: 0; }
 
 /* Large iPads */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
