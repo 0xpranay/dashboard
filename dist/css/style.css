@@ -145,7 +145,8 @@ ul {
 
 #secondary-btn {
   background-color: black;
-  border: 1px solid white; }
+  border: 1px solid white;
+  color: white; }
 
 #secondary-btn:hover {
   background-color: white;
@@ -332,6 +333,7 @@ ul {
 
 #big-card-showcase {
   margin: 5rem;
+  margin-bottom: 0rem;
   justify-content: center;
   align-items: center;
   letter-spacing: -0.03125rem !important;
@@ -348,9 +350,19 @@ ul {
   background-image: linear-gradient(to right top, #e96d82, #be5f82, #915379, #664766, #43394d, #363240, #2c2b33, #232325, #232325, #232325, #232325, #232325);
   border-radius: 1.25rem;
   flex: 1 1 50%; }
+  #big-card .bigText {
+    text-shadow: 0 0 80px white; }
+
+#banner {
+  position: relative; }
+  #banner #ethereum-text {
+    position: absolute;
+    top: 0px; }
 
 /* Large iPads */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #container #donut {
+    padding: 2rem; }
   .responsive-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
