@@ -232,6 +232,8 @@ ul {
     z-index: 5;
     flex: 1 1 50%;
     padding: 4rem; }
+    #container #welcome > p {
+      text-shadow: 0 0 80px white, 0 0 80px white; }
   #container #donut {
     flex: 1 1 50%;
     padding: 4rem; }

@@ -320,6 +320,10 @@ ul
         // padding: 1.25rem;
         flex: 1 1 50%;
         padding: 4rem;
+        & > p
+        {
+            text-shadow: 0 0 80px rgb(255, 255, 255), 0 0 80px rgb(255, 255, 255);
+        }
     }
 
     #donut
