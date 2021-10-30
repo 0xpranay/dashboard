@@ -92,7 +92,7 @@ ul {
   width: 33%; }
 
 #post-1 {
-  background-color: #a4f0f7; }
+  background-color: yellow; }
 
 #post-2 {
   background-color: white; }
@@ -250,7 +250,7 @@ ul {
   height: 100%;
   width: 100%;
   background-color: black;
-  background-image: linear-gradient(to left bottom, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
+  background-image: linear-gradient(to left top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
   padding: 2rem;
   margin-top: -3rem; }
   #container #welcome {

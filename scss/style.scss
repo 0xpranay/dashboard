@@ -134,7 +134,7 @@ ul
 {
     &-1
     {
-        background-color: $special-color;
+        background-color: yellow;
     }
     &-2
     {
@@ -341,8 +341,8 @@ ul
     height: 100%;
     width: 100%;
     background-color: black;
-    background-image: linear-gradient(to left bottom, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
-    // background-image: linear-gradient(to left top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
+    // background-image: linear-gradient(to left bottom, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
+    background-image: linear-gradient(to left top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
     // background-image: linear-gradient(to right top, #e96d82, #b9596b, #8b4554, #60323d, #382026, #27181c, #180f11, #000000, #000000, #000000, #000000, #000000);
     padding: 2rem; //ALERT
     margin-top: -3rem;
