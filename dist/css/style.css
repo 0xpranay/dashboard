@@ -462,18 +462,22 @@ ul {
   margin: auto;
   margin-top: 5rem !important;
   width: 80% !important;
-  margin-bottom: 5rem; }
+  margin-bottom: 2rem; }
 
 #end-explore {
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem; }
   #end-explore #explore-head {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    letter-spacing: 0.04rem; }
   #end-explore #links {
     width: 100%;
-    justify-content: space-evenly;
-    align-items: center; }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 100%);
+    justify-items: center; }
     #end-explore #links li:first-child {
       color: #ff52b8; }
     #end-explore #links li {
@@ -482,10 +486,11 @@ ul {
 #back-bar {
   width: 80%;
   margin: 0 auto;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 1rem 2rem;
   background-color: #ff52b8;
-  transition: all .2s linear; }
+  transition: all .2s linear;
+  position: relative; }
   #back-bar #back-to-top {
     color: black !important;
     justify-content: flex-end; }
@@ -495,9 +500,21 @@ ul {
     cursor: grab;
     transform: translateY(-0.7rem);
     box-shadow: 1px 1rem 2rem rgba(255, 82, 184, 0.4); }
+  #back-bar #link-trick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4; }
 
 #last-padding {
-  padding-bottom: 5rem; }
+  padding-bottom: 5rem;
+  padding-right: 2rem;
+  padding-left: 2rem; }
+
+#banner, #end-showcase, #divider, #end-explore, #last-padding {
+  overflow-x: hidden !important; }
 
 /* Large iPads */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -523,7 +540,11 @@ ul {
     margin: 0rem;
     margin-top: 2rem; }
   #big-card {
-    width: 50%; } }
+    width: 50%; }
+  #end-explore {
+    padding: 0rem 2rem !important; }
+  .last-divider {
+    padding: 0rem 2rem !important; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -599,6 +620,35 @@ ul {
       #big-card-showcase picture img, #big-card-showcase picture source {
         width: initial;
         height: initial; }
+  #ethereum-text p {
+    font-size: 3.5rem !important; }
+  #xdai-text p {
+    font-size: 3.5rem !important;
+    bottom: 4rem !important; }
   #big-card:first-child {
     margin-right: 0px !important;
-    margin-bottom: 1rem; } }
+    margin-bottom: 1rem; }
+  #end-showcase {
+    padding: 0rem 2rem; }
+    #end-showcase #last-end {
+      margin-bottom: 1rem; }
+  #first-end {
+    flex-direction: column;
+    justify-content: space-around; }
+    #first-end .end-card {
+      margin: auto !important;
+      margin-bottom: 1rem !important; }
+  .last-divider {
+    margin-top: 2rem !important; }
+  #end-explore {
+    padding: 0rem 2rem !important; }
+    #end-explore #explore-head {
+      text-align: center; }
+  #links {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 50%) !important;
+    justify-items: center !important; }
+    #links #contribute {
+      margin-left: 2rem; }
+    #links #contact {
+      margin-left: 1rem; } }

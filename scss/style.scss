@@ -681,24 +681,27 @@ ul
     margin: auto;
     margin-top: 5rem !important;
     width: 80% !important;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 #end-explore
 {
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
     #explore-head
     {
         margin-bottom: 2rem;
+        letter-spacing: 0.04rem;
     }
     #links
     {
         width: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 100%);
+        justify-items: center;
         li:first-child
         {
             color: $dark-secondary;
@@ -714,10 +717,12 @@ ul
 {
     width: 80%;
     margin: 0 auto;
-    border-radius: 25px;
+    border-radius: 20px;
     padding: 1rem 2rem;
     background-color: $dark-secondary;
     transition: all .2s linear;
+
+    position: relative;
     #back-to-top
     {
         color: black !important;
@@ -734,12 +739,33 @@ ul
         transform: translateY(-0.7rem);
         box-shadow: 1px 1rem 2rem rgba($color: $dark-secondary, $alpha: 0.4);
     }
+
+    #link-trick
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
 }
 
 #last-padding
 {
     padding-bottom: 5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
+
+
+
+//EXPERIMENTAL
+#banner, #end-showcase, #divider, #end-explore, #last-padding
+{
+    overflow-x: hidden !important;
+}
+
 
 
 
@@ -796,6 +822,16 @@ ul
     #big-card
     {
         width: 50%;
+    }
+
+    #end-explore
+    {
+        padding: 0rem 2rem !important;
+    }
+
+    .last-divider
+    {
+        padding: 0rem 2rem !important;
     }
 }
 
@@ -932,22 +968,75 @@ ul
 
         margin: 0;
         padding: 1rem;
-        // margin: 1rem;
-
-        
     }
 
+    #ethereum-text p
+    {
+        font-size: 3.5rem !important;
+    }
+    #xdai-text p
+    {
+        font-size: 3.5rem !important;
+        bottom: 4rem !important;
+    }
     #big-card:first-child
     {
         margin-right: 0px !important;
         margin-bottom: 1rem;
     }
 
-    #big-card
+    #end-showcase
     {
-        // margin: 0;
-        // padding: 1rem;
-        // width: auto;
+        padding: 0rem 2rem;
+
+        #last-end
+        {
+            margin-bottom: 1rem;
+        }
+    }
+
+    #first-end
+    {
+        .end-card
+        {
+            margin: auto !important;
+            margin-bottom: 1rem !important;
+        }
+
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .last-divider
+    {
+        margin-top: 2rem !important;
+    }
+
+    #end-explore
+    {
+        padding: 0rem 2rem !important;
+
+        #explore-head
+        {
+            text-align: center;
+        }
+    }
+
+    #links
+    {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(2, 50%) !important;
+        justify-items: center !important;
+
+        #contribute
+        {
+            margin-left: 2rem;
+        }
+
+        #contact
+        {
+            margin-left: 1rem;
+        }
     }
 }
 
