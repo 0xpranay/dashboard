@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/7b0ee77dd9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="lander">
@@ -136,14 +138,91 @@
     </div>
 
     <div id="banner">
-        <img src="/assets/ethereum-prism.jpeg" alt="">
+
         <div id="ethereum-text">
-            <p class="bigText">Built on Ethereum's security.</p>
+            <p class="bigText">Built on <span id="eth">Ethereum's</span> <br> security.</p>
         </div>
+
         <div id="xdai-text">
-            <p class="bigText">Gasless <br> on XDAI chain too</p>
+            <p class="bigText">Gasless on <span id="xdai">XDAI</span> chain.</p>
         </div>
+
         <div class="shadow"></div>
+    </div>
+
+    <div id="end-showcase" class="col-flex">
+        <div id="first-end" class="row-flex">
+            <div id="discord" class="col-flex end-card bg-blue">
+                <div>
+                    <p class="largeText" style="color: black;">Join our Discord</p>
+                    <p class="mediumText" style="color: black; margin-bottom: 1rem;">Join the ethtrader discord server and meet us!</p>
+                </div>
+
+                <div id="end-btn-1" class="end-btn-1">Come on, do it!</div>
+            </div>
+
+            <div id="uniswap" class="col-flex end-card bg-red">
+                <div>
+                    <p class="largeText" style="color: black;">Trade</p>
+                    <p class="mediumText" style="color: black; margin-bottom: 1rem;">Trade donuts on Uniswap or Honeyswap.</p>
+                </div>
+
+                <div id="end-btn-1" class="end-btn-1">Make a swap</div>
+            </div>
+        </div>
+
+        <div id="last-end">
+            <div class="col-flex" style="border-radius: 50px;">
+                <div>
+                    <p class="largeText" style="color: black;">Manage on Aragon</p>
+                    <p class="mediumText" style="color: black; margin-bottom: 1rem;">Manage banner and more on Aragon Dapp.</p>
+                </div>
+    
+                <div id="end-btn-2" class="end-btn-2">Aragon <i class="fas fa-external-link-alt"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="divider" class="last-divider"></div>
+
+    <div id="end-explore" class="col-flex">
+        <div id="explore-head" class="endText">Explore Ethtrader</div>
+        <div id="links" class="row-flex">
+            <ul>
+                <li>BUILD</li>
+                <li>Docs <svg width="11" height="11" class="ml-2" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 13V3.11765M13 13H3.11765" stroke="currentColor" stroke-width="1.5"></path></svg></li>
+                <li>GitHub</li>
+                <li>Manage</li>
+                <li>Polls</li>
+            </ul>
+            <ul>
+                <li>LEARN</li>
+                <li>Docs</li>
+                <li>GitHub</li>
+                <li>Manage</li>
+                <li>Polls</li>
+            </ul>
+            <ul>
+                <li>CONTRIBUTE</li>
+                <li>Docs</li>
+                <li>GitHub</li>
+                <li>Manage</li>
+                <li>Polls</li>
+            </ul>
+            <ul>
+                <li>CONTACT</li>
+                <li>Docs</li>
+                <li>GitHub</li>
+                <li>Manage</li>
+                <li>Polls</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="last-padding">
+        <footer id="back-bar">
+            <div id="back-to-top" class="row-flex mediumText"><a href="#">Back to top</a><i class="fas fa-arrow-up" style="color: black;"></i></div>
+        </footer>
     </div>
 </body>
 </html>
