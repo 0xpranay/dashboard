@@ -208,7 +208,7 @@ ul
     color: black;
 }
 
-#primary-btn:hover
+#primary-btn:hover, #primary-btn:active
 {
     background-color: white;
     color: black;
@@ -491,6 +491,10 @@ ul
 }
 #showcase
 {
+    a
+    {
+        color: black;
+    }
     overflow: hidden;
     &-text
     {
@@ -660,7 +664,7 @@ ul
         justify-content: center;
         align-items: center;
 
-        div:first-child
+        a:first-child
         {
             margin-right: 1rem;
         }
@@ -709,7 +713,6 @@ ul
     #explore-head
     {
         margin-bottom: 2rem;
-        letter-spacing: 0.04rem;
     }
     #links
     {
@@ -969,12 +972,19 @@ ul
             {
                 text-align: center;
             }
-            div:first-child
+            a:first-child
             {
                 margin-right: 0;
                 width: 100%;
                 margin-bottom: 0.5rem;
             }
+        }
+        #end-btn-1:hover
+        {
+            background-color: $special-color;
+            color: black;
+            transform: translateY(-0.5rem);
+            box-shadow: 1px 1rem 2rem rgba($color: $special-color, $alpha: 0.4);
         }
     }
 
