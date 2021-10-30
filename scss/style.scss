@@ -31,6 +31,7 @@ html
     color: white;
     text-rendering: geometricPrecision;
     max-width: 100%;
+    // outline: 1px solid red !important;
 }
 
 a
@@ -551,10 +552,14 @@ ul
 
 #banner
 {
-    width: 100%;
+    overflow: hidden !important;
+    position: relative !important;
+    // width: 100%;
     height: 600px;
-    position: relative;
-    background: url('/assets/ethereum-prism.jpeg') no-repeat center center/cover;
+    background: url('/assets/ethereum-prism.jpeg') no-repeat center center;
+    background-size: cover;
+    background-clip: padding-box;
+    // padding: 2rem;
     #ethereum-text
     {
         position: absolute;
@@ -610,7 +615,7 @@ ul
             background-color: $dark-secondary;
             // margin: 1rem;
             flex: 1 1 50%;
-            height: 18rem;
+            // height: 18rem;
         }
         .end-card:first-child
         {
@@ -649,6 +654,17 @@ ul
 
 #uniswap
 {
+    min-height: 100%;
+    #swap
+    {
+        justify-content: center;
+        align-items: center;
+
+        div:first-child
+        {
+            margin-right: 1rem;
+        }
+    }
     #end-btn-1:hover
     {
         background-color: $special-color;
@@ -760,11 +776,8 @@ ul
 
 
 
-//EXPERIMENTAL
-#banner, #end-showcase, #divider, #end-explore, #last-padding
-{
-    overflow-x: hidden !important;
-}
+
+
 
 
 
@@ -777,72 +790,12 @@ ul
 
 // MEDIA QUERIES FOLLOW
 
-
-/* Large iPads */
-@media only screen and (min-width: 768px) and (max-width: 1024px) 
-{
-    #container
-    {
-        #donut
-        {
-            padding: 2rem;
-        }
-    }
-    .responsive-grid
-    {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 0;
-    }
-
-    .stat-divider-tablet-1
-    {
-        height: 2px;
-        width: 30rem;
-        position: absolute;
-        display: block !important;
-        transform: translateY(2.5rem);
-    }
-
-    .stat-divider-tablet-2
-    {
-        height: 2px;
-        width: 30rem;
-        position: absolute;
-        display: block !important;
-        transform: translateY(2.5rem);
-    }
-
-    #big-card-showcase
-    {
-        margin: 0rem;
-        margin-top: 2rem;
-    }
-
-    #big-card
-    {
-        width: 50%;
-    }
-
-    #end-explore
-    {
-        padding: 0rem 2rem !important;
-    }
-
-    .last-divider
-    {
-        padding: 0rem 2rem !important;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (ma-width: 600px) {}
-
-/* Extra small devices (phones, 600px and down) */
+/* Phones */
 @media only screen and (max-width: 600px) {
+    #banner
+    {
+        overflow: hidden;
+    }
     #lander
     {
         margin-bottom: 2rem;
@@ -977,7 +930,7 @@ ul
     #xdai-text p
     {
         font-size: 3.5rem !important;
-        bottom: 4rem !important;
+        // bottom: 4rem !important;
     }
     #big-card:first-child
     {
@@ -1005,6 +958,24 @@ ul
 
         flex-direction: column;
         justify-content: space-around;
+    }
+
+    #uniswap
+    {
+        #swap
+        {
+            flex-direction: column;
+            div 
+            {
+                text-align: center;
+            }
+            div:first-child
+            {
+                margin-right: 0;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
     }
 
     .last-divider
@@ -1039,4 +1010,178 @@ ul
         }
     }
 }
+
+/* Normal iPads */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    #intro-text
+    {
+        font-size: 3rem;
+    }
+
+    #intro-explain-explore
+    {
+        margin-top: 1.5rem;
+    }
+    #banner
+    {
+        overflow: hidden;
+        max-width: 100%;
+    }
+    #container
+    {
+        #donut
+        {
+            padding: 2rem;
+            width: max-content;
+            max-width: 100%;
+        }
+        #welcome
+        {
+            padding: 3rem 1rem;
+        }
+    }
+    .responsive-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .stat-divider-tablet-1
+    {
+        height: 2px;
+        width: 40%;
+        position: absolute;
+        display: block !important;
+        transform: translateY(2.5rem);
+    }
+
+    .stat-divider-tablet-2
+    {
+        height: 2px;
+        width: 40% !important;
+        position: absolute;
+        display: block !important;
+        transform: translateY(2.5rem);
+    }
+
+    #big-card-showcase
+    {
+        margin: 0rem;
+        margin-top: 2rem;
+    }
+
+    #big-card
+    {
+        width: 50%;
+    }
+
+
+    #end-showcase
+    {
+        padding: 0rem 2rem;
+
+        #last-end
+        {
+            margin-bottom: 1rem;
+        }
+    }
+
+    #first-end
+    {
+        .end-card
+        {
+            // margin: auto !important;
+            width: 100%;
+            margin-bottom: 1rem !important;
+            margin-right: 0rem !important;
+        }
+
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #end-explore
+    {
+        padding: 0rem 2rem !important;
+    }
+
+    .last-divider
+    {
+        padding: 0rem 2rem !important;
+    }
+
+}
+
+/*Large iPads */
+@media only screen and (min-width: 769px) and (max-width: 1024px) 
+{
+    #container
+    {
+        #donut
+        {
+            padding: 2rem;
+        }
+    }
+
+    #stat-grid
+    {
+        gap: 2px;
+    }
+    .responsive-grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    // .stat-divider-tablet-1
+    // {
+    //     height: 2px;
+    //     width: 30rem;
+    //     position: absolute;
+    //     display: block !important;
+    //     transform: translateY(2.5rem);
+    // }
+
+    // .stat-divider-tablet-2
+    // {
+    //     height: 2px;
+    //     width: 40%;
+    //     position: absolute;
+    //     display: block !important;
+    //     transform: translateY(2.5rem);
+    // }
+
+    #big-card-showcase
+    {
+        margin: 0rem;
+        margin-top: 2rem;
+    }
+
+    #big-card
+    {
+        width: 50%;
+    }
+
+    #end-explore
+    {
+        padding: 0rem 2rem !important;
+    }
+
+    .last-divider
+    {
+        padding: 0rem 2rem !important;
+    }
+
+    #banner
+    {
+        padding: 4rem !important;
+
+        .shadow
+        {
+            padding: 4rem !important;
+        }
+    }
+}
+
 

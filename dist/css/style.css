@@ -381,10 +381,12 @@ ul {
     text-shadow: 0 0 80px white; }
 
 #banner {
-  width: 100%;
+  overflow: hidden !important;
+  position: relative !important;
   height: 600px;
-  position: relative;
-  background: url("/assets/ethereum-prism.jpeg") no-repeat center center/cover; }
+  background: url("/assets/ethereum-prism.jpeg") no-repeat center center;
+  background-size: cover;
+  background-clip: padding-box; }
   #banner #ethereum-text {
     position: absolute;
     top: 2rem;
@@ -419,8 +421,7 @@ ul {
     #end-showcase #first-end .end-card {
       padding: 2rem 2rem;
       background-color: #ff52b8;
-      flex: 1 1 50%;
-      height: 18rem; }
+      flex: 1 1 50%; }
     #end-showcase #first-end .end-card:first-child {
       margin-right: 2rem; }
   #end-showcase #last-end {
@@ -440,11 +441,18 @@ ul {
 #discord, #uniswap {
   justify-content: space-between; }
 
-#uniswap #end-btn-1:hover {
-  background-color: #a4f0f7;
-  color: black;
-  transform: translateY(-0.5rem);
-  box-shadow: 1px 1rem 2rem rgba(164, 240, 247, 0.4); }
+#uniswap {
+  min-height: 100%; }
+  #uniswap #swap {
+    justify-content: center;
+    align-items: center; }
+    #uniswap #swap div:first-child {
+      margin-right: 1rem; }
+  #uniswap #end-btn-1:hover {
+    background-color: #a4f0f7;
+    color: black;
+    transform: translateY(-0.5rem);
+    box-shadow: 1px 1rem 2rem rgba(164, 240, 247, 0.4); }
 
 #discord #end-btn-1:hover {
   background-color: #d7c16a;
@@ -513,43 +521,10 @@ ul {
   padding-right: 2rem;
   padding-left: 2rem; }
 
-#banner, #end-showcase, #divider, #end-explore, #last-padding {
-  overflow-x: hidden !important; }
-
-/* Large iPads */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  #container #donut {
-    padding: 2rem; }
-  .responsive-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0; }
-  .stat-divider-tablet-1 {
-    height: 2px;
-    width: 30rem;
-    position: absolute;
-    display: block !important;
-    transform: translateY(2.5rem); }
-  .stat-divider-tablet-2 {
-    height: 2px;
-    width: 30rem;
-    position: absolute;
-    display: block !important;
-    transform: translateY(2.5rem); }
-  #big-card-showcase {
-    margin: 0rem;
-    margin-top: 2rem; }
-  #big-card {
-    width: 50%; }
-  #end-explore {
-    padding: 0rem 2rem !important; }
-  .last-divider {
-    padding: 0rem 2rem !important; } }
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Extra small devices (phones, 600px and down) */
+/* Phones */
 @media only screen and (max-width: 600px) {
+  #banner {
+    overflow: hidden; }
   #lander {
     margin-bottom: 2rem; }
   #container {
@@ -623,8 +598,7 @@ ul {
   #ethereum-text p {
     font-size: 3.5rem !important; }
   #xdai-text p {
-    font-size: 3.5rem !important;
-    bottom: 4rem !important; }
+    font-size: 3.5rem !important; }
   #big-card:first-child {
     margin-right: 0px !important;
     margin-bottom: 1rem; }
@@ -638,6 +612,14 @@ ul {
     #first-end .end-card {
       margin: auto !important;
       margin-bottom: 1rem !important; }
+  #uniswap #swap {
+    flex-direction: column; }
+    #uniswap #swap div {
+      text-align: center; }
+    #uniswap #swap div:first-child {
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: 0.5rem; }
   .last-divider {
     margin-top: 2rem !important; }
   #end-explore {
@@ -652,3 +634,78 @@ ul {
       margin-left: 2rem; }
     #links #contact {
       margin-left: 1rem; } }
+
+/* Normal iPads */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  #intro-text {
+    font-size: 3rem; }
+  #intro-explain-explore {
+    margin-top: 1.5rem; }
+  #banner {
+    overflow: hidden;
+    max-width: 100%; }
+  #container #donut {
+    padding: 2rem;
+    width: max-content;
+    max-width: 100%; }
+  #container #welcome {
+    padding: 3rem 1rem; }
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0; }
+  .stat-divider-tablet-1 {
+    height: 2px;
+    width: 40%;
+    position: absolute;
+    display: block !important;
+    transform: translateY(2.5rem); }
+  .stat-divider-tablet-2 {
+    height: 2px;
+    width: 40% !important;
+    position: absolute;
+    display: block !important;
+    transform: translateY(2.5rem); }
+  #big-card-showcase {
+    margin: 0rem;
+    margin-top: 2rem; }
+  #big-card {
+    width: 50%; }
+  #end-showcase {
+    padding: 0rem 2rem; }
+    #end-showcase #last-end {
+      margin-bottom: 1rem; }
+  #first-end {
+    flex-direction: column;
+    justify-content: space-around; }
+    #first-end .end-card {
+      width: 100%;
+      margin-bottom: 1rem !important;
+      margin-right: 0rem !important; }
+  #end-explore {
+    padding: 0rem 2rem !important; }
+  .last-divider {
+    padding: 0rem 2rem !important; } }
+
+/*Large iPads */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  #container #donut {
+    padding: 2rem; }
+  #stat-grid {
+    gap: 2px; }
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); }
+  #big-card-showcase {
+    margin: 0rem;
+    margin-top: 2rem; }
+  #big-card {
+    width: 50%; }
+  #end-explore {
+    padding: 0rem 2rem !important; }
+  .last-divider {
+    padding: 0rem 2rem !important; }
+  #banner {
+    padding: 4rem !important; }
+    #banner .shadow {
+      padding: 4rem !important; } }
