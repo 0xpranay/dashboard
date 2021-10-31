@@ -319,6 +319,10 @@ ul
     flex-wrap: nowrap;
     z-index: 2;
     box-shadow: 0px 1rem 8rem 7rem $primary-color;
+
+    // position: fixed;
+    // top: 0px;
+    // width: 100vw;
 }
 
 #nav-bar a, #nav-bar ul
@@ -378,7 +382,11 @@ ul
         text-align: center;
     }
 }
-
+#current-page
+{
+    font-weight: 600;
+    text-transform: uppercase;
+}
 #lander-links
 {
     margin-top: 1rem;
@@ -801,10 +809,6 @@ ul
     #banner
     {
         overflow: hidden;
-    }
-    #lander
-    {
-        // margin-bottom: 2rem;
     }
     #container
     {
