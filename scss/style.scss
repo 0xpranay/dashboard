@@ -31,7 +31,6 @@ html
     color: white;
     text-rendering: geometricPrecision;
     max-width: 100%;
-    // outline: 1px solid red !important;
 }
 
 a
@@ -416,7 +415,7 @@ ul
     width: 100%;
     // margin-top: 2rem; Check once! This might raise an error
 
-    animation: spin 60s infinite linear;
+    // animation: spin 60s infinite linear;
 }
 
 #divider
@@ -1127,7 +1126,7 @@ ul
 }
 
 /*Large iPads */
-@media only screen and (min-width: 769px) and (max-width: 1024px) 
+@media only screen and (min-width: 769px) and (max-width: 1100px) 
 {
     #container
     {

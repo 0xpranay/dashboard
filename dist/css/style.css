@@ -295,8 +295,7 @@ ul {
   max-height: 100%;
   display: block;
   margin: auto;
-  width: 100%;
-  animation: spin 60s infinite linear; }
+  width: 100%; }
 
 #divider {
   display: block;
@@ -695,7 +694,7 @@ ul {
     padding: 0rem 2rem !important; } }
 
 /*Large iPads */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1100px) {
   #container #donut {
     padding: 2rem; }
   #stat-grid {
