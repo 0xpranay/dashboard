@@ -43,7 +43,7 @@ a, a:visited, a:hover, a:active {
 }
 a:hover
 {
-    color: $secondary-color;
+    color: $dark-secondary;
 }
 
 ul
@@ -333,6 +333,9 @@ ul
     margin-left: 5rem;
     margin-right: 2rem;
     justify-content: space-evenly;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 #container
@@ -405,7 +408,7 @@ ul
     }
 }
 
-#donut img
+#donut img, #big-card img
 {
     max-height: 100%;
     display: block;
@@ -681,7 +684,7 @@ ul
 {
     #end-btn-1:hover
     {
-        background-color: $special-yellow;
+        background-color: $dark-secondary;
         color: black;
         transform: translateY(-0.5rem);
         box-shadow: 1px 1rem 2rem rgba($color: $special-yellow, $alpha: 0.4);
@@ -801,7 +804,7 @@ ul
     }
     #lander
     {
-        margin-bottom: 2rem;
+        // margin-bottom: 2rem;
     }
     #container
     {

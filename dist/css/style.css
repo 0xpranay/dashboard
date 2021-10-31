@@ -23,7 +23,7 @@ a, a:visited, a:hover, a:active {
   color: inherit; }
 
 a:hover {
-  color: #e96d82; }
+  color: #ff52b8; }
 
 ul {
   list-style-type: none; }
@@ -243,7 +243,10 @@ ul {
   width: 100%;
   margin-left: 5rem;
   margin-right: 2rem;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6; }
 
 #container {
   justify-content: space-between;
@@ -288,7 +291,7 @@ ul {
     transform: translateY(-0.5rem);
     box-shadow: 0px 0.5rem 1rem rgba(255, 255, 255, 0.4); }
 
-#donut img {
+#donut img, #big-card img {
   max-height: 100%;
   display: block;
   margin: auto;
@@ -457,7 +460,7 @@ ul {
     box-shadow: 1px 1rem 2rem rgba(164, 240, 247, 0.4); }
 
 #discord #end-btn-1:hover {
-  background-color: #d7c16a;
+  background-color: #ff52b8;
   color: black;
   transform: translateY(-0.5rem);
   box-shadow: 1px 1rem 2rem rgba(215, 193, 106, 0.4); }
@@ -526,8 +529,6 @@ ul {
 @media only screen and (max-width: 600px) {
   #banner {
     overflow: hidden; }
-  #lander {
-    margin-bottom: 2rem; }
   #container {
     display: flex;
     flex-direction: column-reverse;
