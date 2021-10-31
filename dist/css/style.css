@@ -14,7 +14,8 @@ html {
   font-family: 'Inter', sans-serif;
   color: white;
   text-rendering: geometricPrecision;
-  max-width: 100%; }
+  max-width: 100%;
+  outline: 1px solid red !important; }
 
 a {
   text-decoration: none; }
@@ -643,6 +644,12 @@ ul {
 
 /* Normal iPads */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
+  #current-page {
+    display: none; }
+  #nav-bar {
+    justify-content: flex-start; }
+    #nav-bar #sub-menu {
+      margin: 0; }
   #intro-text {
     font-size: 3rem; }
   #intro-explain-explore {
@@ -695,6 +702,12 @@ ul {
 
 /*Large iPads */
 @media only screen and (min-width: 769px) and (max-width: 1100px) {
+  #current-page {
+    display: none; }
+  #nav-bar {
+    justify-content: flex-start; }
+    #nav-bar #sub-menu {
+      margin: 0; }
   #container #donut {
     padding: 2rem; }
   #stat-grid {
@@ -714,4 +727,19 @@ ul {
   #banner {
     padding: 4rem !important; }
     #banner .shadow {
-      padding: 4rem !important; } }
+      padding: 4rem !important; }
+  #end-showcase {
+    padding: 0rem 2rem; }
+    #end-showcase #last-end {
+      margin-bottom: 1rem; }
+  #first-end {
+    flex-direction: column;
+    justify-content: space-around; }
+    #first-end .end-card {
+      width: 100%;
+      margin-bottom: 1rem !important;
+      margin-right: 0rem !important; }
+  #end-explore {
+    padding: 0rem 2rem !important; }
+  .last-divider {
+    padding: 0rem 2rem !important; } }
