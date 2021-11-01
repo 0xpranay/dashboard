@@ -11,9 +11,119 @@ function iOS() {
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
 
+function convertToInternationalCurrencySystem (labelValue) {
+
+    // Nine Zeroes for Billions
+    return Math.abs(Number(labelValue)) >= 1.0e+9
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+    // Six Zeroes for Millions 
+    : Math.abs(Number(labelValue)) >= 1.0e+6
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+    // Three Zeroes for Thousands
+    : Math.abs(Number(labelValue)) >= 1.0e+3
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+
+    : Math.abs(Number(labelValue));
+
+}
+
+// const corsProxyUrl = 'https://api.allorigins.win/get?url=';
+
+// async function fetchCors(url='https://reddit.com/r/ethtrader.json')
+// {
+//     const response = await fetch(`${corsProxyUrl}${url}`);
+//     const json = await response.json();
+//     if(json.contents)
+//     {
+//         return JSON.parse(json.contents);
+//     }
+// }
+
+// var item = await fetchCors();
+// console.log(item);
+
+// fetch('https://api.allorigins.win/get?url=https://reddit.com/r/ethtrader.json')  
+//   .then(res => res.json())  
+//   .then((out) => {  
+//     console.log(out.contents.data);
+//     console.log(out.data.children[0].data.subreddit_subscribers);  
+
+//   })  
+
+//   .catch(err => {  
+//     throw err  
+//   });
+
+// fetch('https://api.allorigins.win/get?url=https://reddit.com/r/ethtrader.json')
+//   .then(response => response.json())
+//   .then(x => console.log(x.data));
+
+const Http1 = new XMLHttpRequest();
+const url1 = 'https://api.allorigins.win/get?url=https://www.reddit.com/r/ethtrader/comments/nsxjw7/daily_discussion.json';
+Http1.open('GET', url1);
+Http1.send();
+
+Http1.onreadystatechange = function()
+{
+    if(this.readyState == 4 && this.status == 200)
+    {
+        const obj1 = JSON.parse(Http1.responseText);
+        console.log(obj1);
+
+        console.log(obj1[0]['data']['children'][0]['data']['subreddit_subscribers']);
+    }
+}
+
 
 window.onload = function()
 { 
+
+    const Http = new XMLHttpRequest();
+    const url = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xc0f9bd5fa5698b6505f643900ffa515ea5df54a9&apikey=KIX2DUCUIVGT5PMEKF65TJIXMSQXTFCRYH';
+    Http.open('GET', url);
+    Http.send();
+
+    Http.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            const obj = JSON.parse(Http.responseText);
+            var supply = obj.result;
+            document.querySelector(".total-supply").innerHTML = convertToInternationalCurrencySystem(supply.slice(0 , -18));
+        }
+    }
+
+    const Http1 = new XMLHttpRequest();
+    const url1 = 'https://api.coingecko.com/api/v3/simple/price?ids=donut&vs_currencies=usd&include_market_cap=true';
+    Http1.open('GET', url1);
+    Http1.send();
+
+    Http1.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            console.log(Http1.responseText);
+            const obj1 = JSON.parse(Http1.responseText);
+
+            var price = obj1.donut.usd;
+            price = price.toString().slice(0, 6);
+            var marketCap = Math.floor(parseFloat(obj1.donut.usd_market_cap));
+            marketCap = convertToInternationalCurrencySystem(obj1.donut.usd_market_cap);
+
+            document.querySelector(".price").innerHTML = '$' + price;
+            document.querySelector(".market-cap").innerHTML = marketCap;
+
+            console.log(price, marketCap, typeof price, typeof marketCap);
+        }
+    }
+
+
+    
+
+
     if(iOS())
     {
         console.log("Device is iOS");
