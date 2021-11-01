@@ -30,56 +30,39 @@ function convertToInternationalCurrencySystem (labelValue) {
 
 }
 
-// const corsProxyUrl = 'https://api.allorigins.win/get?url=';
-
-// async function fetchCors(url='https://reddit.com/r/ethtrader.json')
-// {
-//     const response = await fetch(`${corsProxyUrl}${url}`);
-//     const json = await response.json();
-//     if(json.contents)
-//     {
-//         return JSON.parse(json.contents);
-//     }
-// }
-
-// var item = await fetchCors();
-// console.log(item);
-
-// fetch('https://api.allorigins.win/get?url=https://reddit.com/r/ethtrader.json')  
-//   .then(res => res.json())  
-//   .then((out) => {  
-//     console.log(out.contents.data);
-//     console.log(out.data.children[0].data.subreddit_subscribers);  
-
-//   })  
-
-//   .catch(err => {  
-//     throw err  
-//   });
-
-// fetch('https://api.allorigins.win/get?url=https://reddit.com/r/ethtrader.json')
-//   .then(response => response.json())
-//   .then(x => console.log(x.data));
-
-const Http1 = new XMLHttpRequest();
-const url1 = 'https://api.allorigins.win/get?url=https://www.reddit.com/r/ethtrader/comments/nsxjw7/daily_discussion.json';
-Http1.open('GET', url1);
-Http1.send();
-
-Http1.onreadystatechange = function()
+async function fetchCors(url='')
 {
-    if(this.readyState == 4 && this.status == 200)
+    const response = await fetch('https://api.allorigins.win/get?url=https://www.reddit.com/r/ethtrader.json');
+    const json = await response.json();
+    if(json.contents)
     {
-        const obj1 = JSON.parse(Http1.responseText);
-        console.log(obj1);
-
-        console.log(obj1[0]['data']['children'][0]['data']['subreddit_subscribers']);
+        return JSON.parse(json.contents);
     }
 }
 
 
 window.onload = function()
 { 
+
+    fetchCors().then(function(result)
+    {
+
+        console.log(result);
+
+        var members = result['data']['children'][0]['data']['subreddit_subscribers'];
+        console.log(members);
+        members = convertToInternationalCurrencySystem(members);
+        document.querySelector(".members").innerHTML = members;
+
+        var top_posts = [];
+
+        for(var i = 0;i < 9;i++)
+        {
+            top_posts.push(result['data']['children'][i]['data']['title']);
+        }
+
+        console.log(top_posts);
+    });
 
     const Http = new XMLHttpRequest();
     const url = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xc0f9bd5fa5698b6505f643900ffa515ea5df54a9&apikey=KIX2DUCUIVGT5PMEKF65TJIXMSQXTFCRYH';
