@@ -43,27 +43,6 @@ async function fetchCors(url='')
 
 window.onload = function()
 { 
-
-    fetchCors().then(function(result)
-    {
-
-        console.log(result);
-
-        var members = result['data']['children'][0]['data']['subreddit_subscribers'];
-        console.log(members);
-        members = convertToInternationalCurrencySystem(members);
-        document.querySelector(".members").innerHTML = members;
-
-        var top_posts = [];
-
-        for(var i = 0;i < 9;i++)
-        {
-            top_posts.push(result['data']['children'][i]['data']['title']);
-        }
-
-        console.log(top_posts);
-    });
-
     const Http = new XMLHttpRequest();
     const url = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0xc0f9bd5fa5698b6505f643900ffa515ea5df54a9&apikey=KIX2DUCUIVGT5PMEKF65TJIXMSQXTFCRYH';
     Http.open('GET', url);
@@ -104,7 +83,48 @@ window.onload = function()
     }
 
 
-    
+    fetchCors().then(function(result)
+    {
+        var members = result['data']['children'][0]['data']['subreddit_subscribers'];
+        members = convertToInternationalCurrencySystem(members);
+        document.querySelector(".members").innerHTML = members;
+
+        var top_posts = [];
+
+        for(var i = 0;i < 9;i++)
+        {
+            top_posts.push(result['data']['children'][i]['data']['title']);
+        }
+
+        console.log(top_posts);
+
+        for(var i = 0;i < 9;i++)
+        {
+            var row, post;
+            if (i >=0 && i<=2)
+            {
+                row = 1;
+                post = (i % 3) + 1;
+            }
+
+            if (i >=3 && i<=5)
+            {
+                row = 2;
+                post = (i % 3) + 1;
+            }
+
+            if (i >=6 && i<=8)
+            {
+                row = 3;
+                post = (i % 3) + 1;
+            }
+            var selector = `.r${row}p${post}`;
+            console.log(selector, typeof selector);
+            console.log(document.querySelector(selector).innerHTML);
+            document.querySelector(selector).innerHTML = top_posts[i];
+        }
+
+    });
 
 
     if(iOS())
