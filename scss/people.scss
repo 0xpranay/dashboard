@@ -1,0 +1,354 @@
+// Variables
+
+$primary-color:black;
+$secondary-color: rgb(233, 109, 130);
+$dark-secondary: #ff52b8;
+$nav-grad: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+$special-color: #a4f0f7;
+$special-yellow: #d7c16a;
+@mixin gradient-bg {
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 7%, rgba(175,89,156,1) 19%, rgba(0,0,0,1) 63%);
+}
+// Template code
+html, body
+{
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+    background: rgb(0,0,0);
+    background: rgb(0,0,0);
+    background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 38%, rgba(233,109,130,1) 100%);
+}
+html
+{
+    height: 100%;
+    width: 100%;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-rendering: geometricPrecision;
+    max-width: 100%;
+    // outline: 1px solid red !important;
+}
+
+a
+{
+    text-decoration: none;
+}
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+a:hover
+{
+    color: $dark-secondary;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.logo
+{
+    display: block;
+    width: 24px;
+    display: block;
+    margin: auto;
+    margin-left: 1rem;
+}
+
+.row-flex
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.space-between
+{
+    justify-content: space-between;
+}
+
+.responsive-grid
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 100%);
+    gap: 0.1rem 0.1rem;
+}
+
+.showcase-flex
+{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: min-content;
+    animation: postmove-right 10s linear infinite;
+    
+}
+.showcase-flex-1
+{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: min-content;
+    animation: postmove-left 30s linear infinite;
+    
+}
+.showcase-flex:hover
+{
+    animation-play-state: paused; 
+}
+.showcase-flex-1:hover
+{
+    animation-play-state: paused; 
+}
+.post
+{
+    color: black;
+    border-radius: 5px 20px 5px 20px;
+    white-space: nowrap;
+    background-color: $dark-secondary;
+    padding: 1.25rem;
+    margin: 0.625rem;
+    width: 33%;
+}
+.post-1
+{
+    color: black;
+    border-radius: 20px 5px 20px 5px;
+    white-space: nowrap;
+    background-color: $dark-secondary;
+    padding: 1.25rem;
+    margin: 0.625rem;
+    width: 33%;
+}
+#post
+{
+    &-1
+    {
+        background-color: yellow;
+    }
+    &-2
+    {
+        background-color: white;
+    }
+
+    &-3
+    {
+        background-color: $dark-secondary;
+    }
+}
+.col-flex-1
+{
+    display: flex;
+    flex-direction: column;
+}
+.col-flex
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.smallText
+{
+    font-size: 1rem;
+    font-weight: 400;
+    color: $primary-color;
+}
+.mediumText
+{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5rem !important;
+    letter-spacing: -0.1rem;
+}
+.endText
+{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem !important;
+    letter-spacing: -0.1rem;
+}
+.largeText
+{
+    font-size: 3.5rem;
+    line-height: 95%;
+    font-weight: 700;
+}
+.bigText
+{
+    font-size: clamp(4.5rem, 8vw, 6rem) !important;
+    font-weight: 700;
+    letter-spacing: -0.13rem;
+    line-height: 95%;
+}
+
+.medium-btn
+{
+    // padding: 0.625rem 1.3125rem;
+    line-height: 1.6;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    text-align:center;
+    padding: 0.625rem 1rem;
+}
+
+.medium-btn:hover
+{
+    background-color: white;
+    color: white;
+}
+
+#primary-btn
+{
+    background-color: #ff52b8;
+    color: black;
+}
+
+#primary-btn:hover, #primary-btn:active
+{
+    background-color: white;
+    color: black;
+}
+
+#secondary-btn
+{
+    background-color: $primary-color;
+    border: 1px solid white;
+    color: white;
+}
+
+#secondary-btn:hover
+{
+    background-color: white;
+    color: black;
+}
+
+#tertiary-btn
+{
+    background-color: #a4f0f7;
+    color: black;
+}
+#tertiary-btn:hover
+{
+    background-color: white;
+    color: black;
+}
+.primary-box
+{
+    background-color: #ff52b8;
+    padding: 1rem;
+    text-align: center;
+}
+#end-btn-1
+{
+    padding: 1rem 3rem;
+    background-color: black;
+    border-radius: 10px;
+    transition: all .2s linear;
+}
+#end-btn-2
+{
+    padding: 1rem 3rem;
+    background-color: black;
+    border-radius: 10px;
+    transition: all .2s linear;
+}
+
+.bg-red
+{
+    background-color: $dark-secondary !important;
+}
+
+.bg-blue
+{
+    background-color: $special-color !important;
+}
+#special-text-1
+{
+    color: $dark-secondary;
+    display: inline;
+}
+.special-text-1
+{
+    color: black;
+    display: inline;
+    font-weight: bold;
+}
+#special-text-2
+{
+    color: $special-color;
+    display: inline;
+}
+.special-text-2
+{
+    color: $special-color;
+    display: inline;
+    font-weight: bold;
+}
+#special-text-3
+{
+    color: #d7c16a;
+    display: inline;
+}
+.special-text-3
+{
+    color: #d7c16a;
+    display: inline;
+    font-weight: bold;
+}
+
+
+#back
+{
+    margin-right: auto !important;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    color: white;
+}
+#header
+{
+    text-align: center;
+    color: white !important;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+#people
+{
+    padding: 0rem 2rem;
+}
+#mod-card
+{
+    color: black !important;
+}
+.grid-card
+{
+    background-color: $dark-secondary;
+    border-radius: 10px;
+    border: 2px solid white;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.09);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.8px);
+-webkit-backdrop-filter: blur(8.8px);
+border: 1px solid rgba(255, 255, 255, 1);
+}
